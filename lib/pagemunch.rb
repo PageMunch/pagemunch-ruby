@@ -8,7 +8,12 @@ module Pagemunch
     include Configurable
 
     def summary(url)
-      conn.get "#{base_url}summary.json", {key:configuration['key'], url:url}
+      conn.get do |req|
+        req.url "#{base_url}summary.json"
+        req.params['key'] = configuration['key']
+        req.params['version'] = configuration['version']
+        req.headers['User-Agent'] = "pagemunch-ruby (#{Pagemunch::VERSION})"
+      end
     end
 
     private
