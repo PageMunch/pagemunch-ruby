@@ -8,13 +8,13 @@ module Pagemunch
     include Configurable
 
     def summary(url)
-      conn.get "#{base_url}summary.json", {key:@key, url:url}
+      conn.get "#{base_url}summary.json", {key:configuration['key'], url:url}
     end
 
     private
 
     def base_url
-      "http://api.pagemunch.com/#{@version}/"
+      "http://api.pagemunch.com/#{configuration['version']}/"
     end
 
     def conn
