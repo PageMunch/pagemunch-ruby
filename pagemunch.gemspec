@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Pagemunch::VERSION
   gem.authors       = ["Luke"]
   gem.email         = ["email@luke-roberts.info"]
-  gem.description   = "An API client for the pagemunch API" 
-  gem.summary       = "An API client for the pagemunch API" 
+  gem.description   = "A client for the PageMunch web crawler API" 
+  gem.summary       = "A client for the PageMunch web crawler API" 
   gem.homepage      = "https://github.com/PageMunch/pagemunch-ruby"
 
   gem.files         = ['lib/pagemunch.rb']
