@@ -8,10 +8,11 @@ Gem::Specification.new do |gem|
   gem.version       = Pagemunch::VERSION
   gem.authors       = ["Luke"]
   gem.email         = ["email@luke-roberts.info"]
+  gem.summary       = "PageMunch" 
   gem.description   = "A client for the PageMunch web crawler API" 
-  gem.summary       = "A client for the PageMunch web crawler API" 
   gem.homepage      = "https://github.com/PageMunch/pagemunch-ruby"
-
+  gem.license       = "MIT"
+  
   gem.files         = ['lib/pagemunch.rb']
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
