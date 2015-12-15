@@ -38,6 +38,5 @@ module Pagemunch
       @conn.headers['User-Agent'] = "pagemunch-ruby (#{Pagemunch::VERSION})"
       @conn
     end
-
   end
 end
