@@ -1,7 +1,7 @@
 require "pagemunch/version"
 require "pagemunch/configurable"
-require 'faraday'
-require 'faraday_middleware'
+require "faraday"
+require "faraday_middleware"
 
 module Pagemunch
   class << self
@@ -34,7 +34,7 @@ module Pagemunch
         faraday.response :json
         faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
-      @conn.params['key'] = configuration['key']
+      @conn.params['key'] = configuration["key"]
       @conn.headers['User-Agent'] = "pagemunch-ruby (#{Pagemunch::VERSION})"
       @conn
     end
