@@ -1,11 +1,9 @@
-# Pagemunch - Web Crawler Gem
+# PageMunch - Link Unfurling
 
 ## Introduction
 
-PageMunch is a simple API backed by an intelligent web crawler, that lets you extract 
-data from any webpage on the internet in milliseconds. Whether you want to grab the best 
-title, description and image for a page, prices, authorship, enable video embeds or more. 
-We make it crazy easy to treat the web like a database.
+PageMunch is a simple API backed by an intelligent web crawler that lets you extract rich previews, entities and images from any url. Whether you want to grab the best title, description and image for a page, prices, authorship, enable video embeds or more.
+
 
 ## Installation
 
@@ -21,10 +19,17 @@ Or install it yourself as:
 
     $ gem install pagemunch
 
+
 ## Usage
 
-TODO: Write usage instructions here
+We recommend storing your API key in an environment variable, for security and to
+enable using different keys in your staging, development and production environments.
 
+```
+Pagemunch.key = ENV.fetch('PAGEMUNCH_API_KEY')
+response = Pagemunch.extract 'http://www.youtube.com/watch?v=9bZkp7q19f0'
+puts response.body.inspect
+```
 
 ## More Details
 

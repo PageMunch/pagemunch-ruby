@@ -1,5 +1,5 @@
-require "pagemunch/version"
-require "pagemunch/configurable"
+require_relative "./pagemunch/version"
+require_relative "./pagemunch/configurable"
 require 'faraday'
 require 'faraday_middleware'
 
@@ -7,16 +7,9 @@ module Pagemunch
   class << self
     include Configurable
 
-    def summary(url)
+    def extract(url)
       conn.get do |req|
-        req.url "#{base_url}summary.json"
-        req.params['url'] = url
-      end
-    end
-
-    def classify(url)
-      conn.get do |req|
-        req.url "#{base_url}classify.json"
+        req.url "#{base_url}extract"
         req.params['url'] = url
       end
     end
@@ -24,7 +17,7 @@ module Pagemunch
     private
 
     def base_url
-      "http://api.pagemunch.com/#{configuration['version']}/"
+      "https://api.pagemunch.com/"
     end
 
     def conn
@@ -34,7 +27,7 @@ module Pagemunch
         faraday.response :json
         faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
-      @conn.params['key'] = configuration['key']
+      @conn.params['apiKey'] = configuration['key']
       @conn.headers['User-Agent'] = "pagemunch-ruby (#{Pagemunch::VERSION})"
       @conn
     end
