@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/pagemunch.svg)](https://badge.fury.io/rb/pagemunch)
+
 # PageMunch - Link Unfurling
 
 ## Introduction
@@ -33,4 +35,4 @@ puts response.body.inspect
 
 ## More Details
 
-For more information, libraries and documentation check out the **[PageMunch Documentation](http://www.pagemunch.com/docs "PageMunch - Web crawler, metadata extraction")**
+For more information, libraries and documentation check out the **[PageMunch Documentation](https://www.pagemunch.com/docs "PageMunch - Web crawler, metadata extraction")**
